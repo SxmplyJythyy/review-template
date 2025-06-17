@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Template</title>
+    <style>
+        .custom-header {
+            background-color: #3A3B3C;
+        }
+
+        .custom-footer {
+            background-color: #3A3B3C;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            transform: scale(1.25);
+        }
+
+        fieldset,
+        legend {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header class="custom-header text-white py-2 flex flex-col items-center">
+        <h1>--- { Review Template } ---</h1>
+        <p class="mt-0">☑ Generator</p>
+    </header>
+
+    <div class="max-w-screen-sm mx-auto px-4">
+        <p>
+            This generator simplifies the creation of a copy-pasta Review Template (if you are on this website, this <em>is</em> what you are looking for)
+        </p>
+        <p>
+            The result generates with a line at the bottom that gives me credit. You do not have to leave it there, but leaving it there is highly appreciated!
+        </p>
+
+        <form id="review-form" class="flex flex-col gap-2">
+            <!-- Categories and options will be injected here by JavaScript -->
+        </form>
+
+        <div class="flex justify-center">
+            <button
+                id="output-button"
+                class="py-4 px-8 text-lg font-bold rounded-lg border-none shadow bg-amber-400 hover:cursor-pointer hover:shadow-lg transition-all">
+                Generate Review
+            </button>
+        </div>
+
+        <div class="flex justify-center mt-4">
+            <button
+                id="copy-output"
+                class="py-2 px-4 text-lg rounded-lg border-none shadow bg-sky-100 hover:cursor-pointer hover:shadow-lg transition-all">
+                Copy output
+            </button>
+        </div>
+
+        <pre id="output" class="rounded-lg my-4 shadow-md border bg-sky-100"></pre>
+    </div>
+
+    <footer class="custom-footer text-white py-2 flex flex-col items-end">
+        <p class="px-8">
+            <a class="text-white">Johnluke Francis</a> ©️ 2024
+        </p>
+    </footer>
+
+    <script>
+        var data = {};
+        var config_json = {
+            "categories": [
+                {
+                    "title": "Gameplay",
+                    "type": "radio",
+                    "options": ["Excellent", "Good", "Average", "Poor"]
+                },
+                {
+                    "title": "Graphics",
+                    "type": "radio",
+                    "options": ["Excellent", "Good", "Average", "Poor"]
+                },
+                {
+                    "title": "Sound",
+                    "type": "radio",
+                    "options": ["Excellent", "Good", "Average", "Poor"]
+                },
+                {
+                    "title": "Story",
+                    "type": "radio",
+                    "options": ["Excellent", "Good", "Average", "Poor"]
+                }
+            ]
+        };
+
+        function createForm() {
+            var form = document.getElementById("review-form");
+            config_json.categories.forEach((category) => {
+                var fieldset = document.createElement("fieldset");
+                fieldset.className = "rounded-lg my-4 shadow-md border bg-sky-100";
+
+                var legend = document.createElement("legend");
+                legend.className = "font-mono font-bold text-xl bg-emerald-300 px-4 rounded-lg shadow";
+                legend.innerText = category.title;
+                fieldset.appendChild(legend);
+
+                category.options.forEach((item) => {
+                    var input = document.createElement("input");
+                    input.type = category.type;
+                    input.id = item;
+                    input.name = category.title;
+                    input.value = item;
+
+                    var label = document.createElement("label");
+                    label.className = "mx-2";
+                    label.htmlFor = item;
+                    label.innerText = item;
+
+                    fieldset.appendChild(input);
+                    fieldset.appendChild(label);
+                    fieldset.appendChild(document.createElement("br"));
+                });
+
+                form.appendChild(fieldset);
+            });
+
+            document.querySelectorAll("input[type='radio']").forEach((input) => {
+                data[input.name] = "";
+                input.addEventListener("change", (event) => {
+                    data[event.target.name] = event.target.value;
+                });
+            });
+        }
+
+        function showOutput() {
+            var output = document.getElementById("output");
+            output.innerHTML = "";
+            config_json.categories.forEach((category) => {
+                output.innerHTML += `\n--- { ${category.title} } ---\n`;
+                category.options.forEach((item) => {
+                    if (data[category.title] === item) {
+                        output.innerHTML += `☑ ${item}\n`;
+                    } else {
+                        output.innerHTML += `☐ ${item}\n`;
+                    }
+                });
+            });
+
+            output.innerHTML += `\n--- { Author } ---\n`;
+            output.innerHTML += `☑ Johnluke Francis ©️ 2024\n`;
+        }
+
+        document.getElementById("output-button").addEventListener("click", showOutput);
+        document.getElementById("copy-output").addEventListener("click", () => {
+            navigator.clipboard.writeText(document.getElementById("output").innerText);
+        });
+
+        createForm();
+    </script>
+</body>
+</html>

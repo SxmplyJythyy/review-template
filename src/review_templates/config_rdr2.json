@@ -1,0 +1,190 @@
+{
+    "name": "Game Review",
+    "categories": [
+        {
+            "title": "Controls",
+            "type": "radio",
+            "options": [
+                "N/A",
+                "Just press buttons",
+                "Easy",
+                "Easy to learn",
+                "Significant Learning",
+                "Difficult",
+                "Extremely Difficult"
+            ]
+        },
+        {
+            "title": "Graphics",
+            "type": "radio",
+            "options": [
+                "N/A",
+                "Masterpiece",
+                "Beautiful",
+                "Good",
+                "Average",
+                "Poor",
+                "Awful"
+            ]
+        },
+        {
+            "title": "Audio",
+            "type": "radio",
+            "options": [
+                "N/A",
+                "Masterpiece",
+                "Beautiful",
+                "Good",
+                "Average",
+                "Poor",
+                "Awful"
+            ]
+        },
+        {
+            "title": "Gameplay",
+            "type": "radio",
+            "options": [
+                "N/A",
+                "Addicting",
+                "Great",
+                "Good",
+                "Average",
+                "Poor",
+                "Awful"
+            ]
+        },
+        {
+            "title": "Story",
+            "type": "radio",
+            "options": [
+                "N/A",
+                "One of the best",
+                "Great",
+                "Good",
+                "Average",
+                "Bad",
+                "Awful"
+            ]
+        },
+        {
+            "title": "Grind",
+            "type": "radio",
+            "options": [
+                "N/A",
+                "None",
+                "Only if you care about leaderboards/ranks",
+                "Only to progress",
+                "Bit too much",
+                "Way too much",
+                "Infinate"
+            ]
+        },
+        {
+            "title": "Length",
+            "type": "radio",
+            "options": [
+                "N/A",
+                "No ending",
+                "Way too long (100+ hours)",
+                "Long (50-100 hours)",
+                "Average (10-50 hours)",
+                "Short (5-10 hours)",
+                "Too short (< 5 hours)"
+            ]
+        },
+        {
+            "title": "Replayability",
+            "type": "radio",
+            "options": [
+                "N/A",
+                "Definitely",
+                "If you wait for an update",
+                "If you wait a few months",
+                "If you want to for fun",
+                "If you want to for achievements",
+                "One-time experience only"
+            ]
+        },
+        {
+            "title": "PC Requirements",
+            "type": "radio",
+            "options": [
+                "N/A",
+                "If you can run paint",
+                "Low-End PC",
+                "Average PC",
+                "Expensive PC",
+                "Really Expensive PC",
+                "NASA Computer"
+            ]
+        },
+        {
+            "title": "Storage Usage",
+            "type": "radio",
+            "options": [
+                "N/A",
+                "Needs less than 1GB",
+                "Needs a couple GB",
+                "Needs 10% of 100GB",
+                "Needs 50% of 100GB",
+                "Needs 10% of 1TB",
+                "Needs 50% of 1TB or more"
+            ]
+        },
+        {
+            "title": "Price",
+            "type": "radio",
+            "options": [
+                "N/A",
+                "Free",
+                "Cheap",
+                "Worth it",
+                "Only if on sale",
+                "Overpriced",
+                "Waste of Money"
+            ]
+        },
+        {
+            "title": "Bugs",
+            "type": "radio",
+            "options": [
+                "N/A",
+                "Never heard of",
+                "Minor Bugs",
+                "Annoying Bugs",
+                "Ton of Bugs",
+                "Game Breaking Bugs",
+                "The game is a bug"
+            ]
+        },
+        {
+            "title": "Audience",
+            "type": "radio",
+            "options": [
+                "N/A",
+                "Everyone",
+                "Toddlers",
+                "Kids",
+                "Teens",
+                "Adults",
+                "Grandparents"
+            ]
+        },
+        {
+            "title": "Overall (? / 10)",
+            "type": "radio",
+            "options": [
+                "10",
+                "9",
+                "8",
+                "7",
+                "6",
+                "5",
+                "4",
+                "3",
+                "2",
+                "1"
+            ]
+        }
+    ]
+}
